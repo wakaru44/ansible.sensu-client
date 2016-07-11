@@ -1,0 +1,6 @@
+.ansible
+archive
+tmp
+*lop
+*swp
+
