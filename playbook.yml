@@ -1,0 +1,5 @@
+---
+- hosts: sensuclients
+  roles:
+     - { role: sensu, sensu_install_server: false, sensu_insntall_uchiwa: false, sensu_install_client: true, sensu_cert_file_name: "sensu_client_cert.pem", sensu_key_file_name:"sensu_client_key.yem", sensu_client_hostname: "foobar", sensu_server_rabbitmq_hostname: "http://ec2-54-170-174-229.eu-west-1.compute.amazonaws.com/", sensu_server_rabbitmq_port: 35671, sensu_server_rabbitmq_user: "sensu", sensu_server_rabbitmq_password: "sensu" }
+    
