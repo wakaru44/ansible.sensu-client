@@ -6,3 +6,8 @@ tmp
 
 # Security
 *pem
+
+# python stuff
+env
+ENV
+*pyc
