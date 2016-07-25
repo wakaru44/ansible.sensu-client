@@ -27,3 +27,11 @@
       mode=0640
     notify:
       - restart sensu client
+
+  - name: install the gems for the plugins
+    command: "/opt/sensu/embedded/bin/gem install {{ item.gem }} --no-doc"
+    with_items: 
+      - { gem: "sensu-plugins-cpu-checks" }
+      - { gem: "sensu-plugins-disk-checks" }
+      - { gem: "sensu-plugins-memory-checks" }
+      - { gem: "sensu-plugins-process-checks" }
