@@ -7,6 +7,9 @@
     src=sensu-server.list
     dest=/etc/apt/sources.list.d/
     backup=yes
+  become: true
+  become_method: sudo
+  become_user: root
   register: aptrepo
 
 - name: refresh apt cache

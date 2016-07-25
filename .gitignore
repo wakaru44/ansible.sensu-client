@@ -1,4 +1,5 @@
 .ansible
+*retry  
 archive
 tmp
 *lop
