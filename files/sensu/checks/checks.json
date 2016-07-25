@@ -1,0 +1,48 @@
+{
+  "checks": {
+    "cpu_check": {
+      "handlers": ["default"],
+      "command": "check-cpu.rb -w 90",
+      "interval": 120,
+      "subscribers": [ "default" ]
+    },
+    "cpu_check": {
+      "command": "check-cpu.rb -w 90 ",
+      "interval": 10,
+      "subscribers": [ "ALL" ]
+    },
+    "disk_check": {
+      "command": "check-disk-usage.rb -w 80 -c 90",
+      "interval": 10,
+      "subscribers": [ "ALL" ]
+    },
+    "apache_check": {
+      "command": "/etc/sensu/plugins/check_apache.rb",
+      "interval": 10,
+      "subscribers": [ "ALL" ]
+    },
+    "memory_check": {
+      "command": "check-memory-percent.rb -w 70 -c 80",
+      "interval": 10,
+      "subscribers": [ "ALL" ]
+    },
+
+    "cpu_metrics": {
+      "type": "metric",
+      "command": "metrics-cpu.rb",
+      "subscribers": [
+        "production"
+      ],
+      "interval": 10,
+      "handler": "debug"
+    },
+    "cron": {
+      "command": "check-process.rb -p cron",
+      "subscribers": [
+        "production","dev"
+      ],
+      "interval": 60
+    }
+  }
+}
+
