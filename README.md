@@ -5,6 +5,21 @@ I will just use this repo, and add my files and stuff
 
 git clone https://github.com/Mayeu/ansible-playbook-sensu.git
 
+
+# Usage
+
+We recommend to use virtualenv whenever possible.
+
+    virtualenv env
+    source env/bin/activate
+    pip install -r requirements.txt
+
+To get set up.
+
+Then to run the common tasks, you can take a look at the Makefile.
+
+    make provision
+
 # Issues
 
 ## Ansible fails to connect to host. But manual SSH works

@@ -1,5 +1,8 @@
 ---
 - hosts: sensuclients
+  become: true
+  become_user: root
+  become_method: sudo
   roles:
      - sensu
   vars:
@@ -14,3 +17,13 @@
     sensu_server_rabbitmq_user: "sensu"
     sensu_server_rabbitmq_password: "sensu"
     
+  tasks:
+  - name: copy all the checks 
+    copy:
+      src=files/sensu/checks/
+      dest=/etc/sensu/conf.d/
+      owner="{{ sensu_user }}"
+      group="{{ sensu_group }}"
+      mode=0640
+    notify:
+      - restart sensu client
