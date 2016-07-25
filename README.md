@@ -21,6 +21,7 @@ Then to run the common tasks, you can take a look at the Makefile. For example, 
     make provision
 
 To configure the inventory, you will need the file .ansible/hosts with a [sensuclients] host group.
+You can see and example in the `inventory.example` file.
 
 
 # Issues
