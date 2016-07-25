@@ -16,9 +16,12 @@ We recommend to use virtualenv whenever possible.
 
 To get set up.
 
-Then to run the common tasks, you can take a look at the Makefile.
+Then to run the common tasks, you can take a look at the Makefile. For example, to provision the machines in .ansible/hosts
 
     make provision
+
+To configure the inventory, you will need the file .ansible/hosts with a [sensuclients] host group.
+
 
 # Issues
 
